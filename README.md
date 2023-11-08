@@ -1,4 +1,3 @@
-# Python_DevOps_DB
 
 # Databases
 
@@ -103,9 +102,13 @@ These examples demonstrate the use of primary keys and foreign keys to establish
 
 ### Relationships:
 
-## Examples for each type of relationship along with a simple table diagram.
-
 - **One-to-One**: A relationship where one record in a table is associated with exactly one record in another table.
+
+- **One-to-Many**: A relationship where one record in a table can be associated with multiple records in another table.
+
+- **Many-to-Many**: A relationship where multiple records in a table can be associated with multiple records in another table.
+
+## Examples for each type of relationship along with a simple table diagram.
 
 ### One-to-One Relationship:
 
@@ -141,7 +144,120 @@ User Profiles Table
 +------------+---------+------------+-----------+
 ```
 
-- **One-to-Many**: A relationship where one record in a table can be associated with multiple records in another table.
+### One-to-Many Relationship:
 
-- **Many-to-Many**: A relationship where multiple records in a table can be associated with multiple records in another table.
+**Example: Departments and Employees**
 
+In a one-to-many relationship, one record in a table can be associated with multiple records in another table.
+
+**Tables:**
+
+1. Departments Table:
+   - Columns: department_id (Primary Key), department_name
+
+2. Employees Table:
+   - Columns: employee_id (Primary Key), department_id (Foreign Key), employee_name, position
+
+**Table Diagram:**
+
+```
+Departments Table
++------------------+----------------------+
+| department_id   | department_name     |
++------------------+----------------------+
+|       1          |   Sales             |
+|       2          |   Marketing         |
++------------------+----------------------+
+
+Employees Table
++-----------------+------------------+----------------+
+| employee_id     | department_id    | employee_name  | position   |
++-----------------+------------------+----------------+
+|       1         |   1              |   John Doe     |  Manager   |
+|       2         |   1              |   Jane Smith   |  Sales Rep |
+|       3         |   2              |   Bob Johnson  |  Analyst   |
++-----------------+------------------+----------------+
+```
+
+### Many-to-Many Relationship:
+
+**Example: Students and Courses**
+
+In a many-to-many relationship, multiple records in a table can be associated with multiple records in another table.
+
+**Tables:**
+
+1. Students Table:
+   - Columns: student_id (Primary Key), student_name
+
+2. Courses Table:
+   - Columns: course_id (Primary Key), course_name
+
+3. Enrollment Table (Join Table):
+   - Columns: enrollment_id (Primary Key), student_id (Foreign Key), course_id (Foreign Key)
+
+**Table Diagram:**
+
+```
+Students Table
++-------------+-------------------+
+| student_id  | student_name      |
++-------------+-------------------+
+|     1       |   John Doe        |
+|     2       |   Jane Smith      |
+|     3       |   Bob Johnson     |
++-------------+-------------------+
+
+Courses Table
++------------+---------------------+
+| course_id  | course_name         |
++------------+---------------------+
+|    101     |   Math 101          |
+|    102     |   English 101       |
+|    103     |   History 101       |
++------------+---------------------+
+
+Enrollment Table
++----------------+-------------+------------+
+| enrollment_id  | student_id  | course_id  |
++----------------+-------------+------------+
+|      1         |      1      |     101    |
+|      2         |      1      |     102    |
+|      3         |      2      |     101    |
+|      4         |      3      |     103    |
++----------------+-------------+------------+
+```
+
+These examples illustrate different types of relationships in a relational database. Understanding these concepts is crucial for designing and working with databases effectively.
+
+### Normalization:
+
+**Normalization** is a process used in database design to organize a database into tables in such a way that redundancy is minimized. This is achieved by dividing a large table into smaller tables and defining relationships between them.
+
+### SQL (Structured Query Language):
+
+SQL is a domain-specific language used for managing and querying relational databases. It provides commands for creating, retrieving, updating, and deleting data from databases. Some common SQL commands include `SELECT`, `INSERT`, `UPDATE`, `DELETE`, `CREATE`, `DROP`, and more.
+
+### Examples:
+
+Let's illustrate some of these concepts with a simple example. Consider two tables, `Customers` and `Orders`:
+
+**Customers Table**:
+
+| CustomerID | Name   | Email           |
+|------------|--------|-----------------|
+| 1          | Alice  | alice@example.com|
+| 2          | Bob    | bob@example.com  |
+| 3          | Charlie| charlie@example.com|
+
+**Orders Table**:
+
+| OrderID | CustomerID | Product     | Quantity |
+|---------|------------|-------------|----------|
+| 101     | 1          | Product A   | 2        |
+| 102     | 2          | Product B   | 3        |
+| 103     | 1          | Product C   | 1        |
+
+In this example, `CustomerID` is the primary key in the `Customers` table, and it is also a foreign key in the `Orders` table, establishing a one-to-many relationship.
+
+These are some of the basic concepts related to databases and the relational model. There are many more advanced topics in database management and design, but understanding these fundamentals is a great starting point.
