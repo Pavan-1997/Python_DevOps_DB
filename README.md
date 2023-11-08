@@ -103,6 +103,8 @@ These examples demonstrate the use of primary keys and foreign keys to establish
 
 ### Relationships:
 
+## Examples for each type of relationship along with a simple table diagram.
+
 - **One-to-One**: A relationship where one record in a table is associated with exactly one record in another table.
 
 - **One-to-Many**: A relationship where one record in a table can be associated with multiple records in another table.
