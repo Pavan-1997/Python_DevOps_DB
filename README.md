@@ -23,3 +23,42 @@ The **relational model** is a way of organizing data in tables (relations) with 
 - **Foreign Key**: A foreign key is a field in a table that refers to the primary key in another table. It establishes relationships between tables.
 
 #### Examples for primary keys and foreign keys with accompanying table diagrams.
+
+##### Example with Primary Key:
+
+**Scenario: Customers and Orders**
+
+In this example, we have two tables, one for customers and one for orders. Each customer has a unique identifier, and each order is associated with a specific customer.
+
+**Tables:**
+
+1. Customers Table:
+   - Columns: customer_id (Primary Key), customer_name, email
+
+2. Orders Table:
+   - Columns: order_id (Primary Key), customer_id (Foreign Key), order_date, total_amount
+
+**Table Diagram:**
+
+```
+Customers Table
++-------------+-------------------+----------------------+
+| customer_id | customer_name     | email                |
++-------------+-------------------+----------------------+
+|     1       |   John Doe        | john@example.com     |
+|     2       |   Jane Smith      | jane@example.com     |
+|     3       |   Bob Johnson     | bob@example.com      |
++-------------+-------------------+----------------------+
+
+Orders Table
++------------+--------------+---------------------+---------------+
+| order_id   | customer_id  | order_date          | total_amount  |
++------------+--------------+---------------------+---------------+
+|    101     |      1       |  2023-11-01         |     100       |
+|    102     |      2       |  2023-11-02         |     150       |
+|    103     |      1       |  2023-11-02         |     200       |
++------------+--------------+---------------------+---------------+
+```
+
+In this example, `customer_id` is the primary key in the Customers table, ensuring each customer has a unique identifier. The Orders table has a `customer_id` column, which is a foreign key referencing the primary key in the Customers table, establishing a relationship between the two tables.
+
