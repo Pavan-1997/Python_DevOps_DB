@@ -107,6 +107,40 @@ These examples demonstrate the use of primary keys and foreign keys to establish
 
 - **One-to-One**: A relationship where one record in a table is associated with exactly one record in another table.
 
+### One-to-One Relationship:
+
+**Example: Users and User Profiles**
+
+In a one-to-one relationship, one record in a table is associated with exactly one record in another table.
+
+**Tables:**
+
+1. Users Table:
+   - Columns: user_id (Primary Key), username, email
+
+2. User Profiles Table:
+   - Columns: profile_id (Primary Key), user_id (Foreign Key), first_name, last_name, date_of_birth
+
+**Table Diagram:**
+
+```
+Users Table
++---------+-----------+---------------------+
+| user_id | username  | email               |
++---------+-----------+---------------------+
+|   1     | john_doe  | john@example.com    |
+|   2     | jane_doe  | jane@example.com    |
++---------+-----------+---------------------+
+
+User Profiles Table
++------------+---------+------------+-----------+
+| profile_id | user_id | first_name | last_name |
++------------+---------+------------+-----------+
+|    1       |   1     |   John     |   Doe     |
+|    2       |   2     |   Jane     |   Doe     |
++------------+---------+------------+-----------+
+```
+
 - **One-to-Many**: A relationship where one record in a table can be associated with multiple records in another table.
 
 - **Many-to-Many**: A relationship where multiple records in a table can be associated with multiple records in another table.
