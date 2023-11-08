@@ -101,4 +101,11 @@ In this example, `employee_id` is the primary key in the Employees table. The `d
 
 These examples demonstrate the use of primary keys and foreign keys to establish relationships between tables in a relational database.
 
+### Relationships:
+
+- **One-to-One**: A relationship where one record in a table is associated with exactly one record in another table.
+
+- **One-to-Many**: A relationship where one record in a table can be associated with multiple records in another table.
+
+- **Many-to-Many**: A relationship where multiple records in a table can be associated with multiple records in another table.
 
