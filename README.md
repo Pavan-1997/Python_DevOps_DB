@@ -62,3 +62,43 @@ Orders Table
 
 In this example, `customer_id` is the primary key in the Customers table, ensuring each customer has a unique identifier. The Orders table has a `customer_id` column, which is a foreign key referencing the primary key in the Customers table, establishing a relationship between the two tables.
 
+##### Example with Foreign Key:
+
+**Scenario: Employees and Departments**
+
+In this example, we have two tables, one for employees and one for departments. Each employee belongs to a specific department, which is represented by a foreign key in the Employees table.
+
+**Tables:**
+
+1. Employees Table:
+   - Columns: employee_id (Primary Key), employee_name, department_id (Foreign Key), position
+
+2. Departments Table:
+   - Columns: department_id (Primary Key), department_name
+
+**Table Diagram:**
+
+```
+Employees Table
++-----------------+------------------+------------------+----------------+
+| employee_id     | employee_name    | department_id    | position       |
++-----------------+------------------+------------------+----------------+
+|       1         |   John Doe       |        101       |  Manager       |
+|       2         |   Jane Smith     |        102       |  Sales Rep     |
+|       3         |   Bob Johnson    |        101       |  Analyst       |
++-----------------+------------------+------------------+----------------+
+
+Departments Table
++------------------+----------------------+
+| department_id   | department_name     |
++------------------+----------------------+
+|       101        |   Sales             |
+|       102        |   Marketing         |
++------------------+----------------------+
+```
+
+In this example, `employee_id` is the primary key in the Employees table. The `department_id` column in the Employees table is a foreign key referencing the primary key in the Departments table. This establishes a relationship between employees and their respective departments.
+
+These examples demonstrate the use of primary keys and foreign keys to establish relationships between tables in a relational database.
+
+
