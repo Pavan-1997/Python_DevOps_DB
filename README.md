@@ -1,6 +1,6 @@
 # Python_DevOps_DB
  
-# Databases            
+# Databases              
      
 A **database** is a structured collection of data organized in a way that it can be easily accessed, managed, and updated. Databases are used to store and retrieve information for various purposes such as managing business operations, storing user information in web applications, and more.
 
